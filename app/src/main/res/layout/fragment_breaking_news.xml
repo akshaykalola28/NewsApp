@@ -18,5 +18,5 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginVertical="@dimen/_5sdp"
-        android:visibility="gone" />
+        android:visibility="visible" />
 </RelativeLayout>

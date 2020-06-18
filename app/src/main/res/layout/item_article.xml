@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/_10sdp">
 
     <ImageView
         android:id="@+id/ivArticleImage"
-        android:layout_width="@dimen/_100sdp"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/_130sdp"
+        android:layout_height="@dimen/_90sdp"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop" />
 
@@ -27,15 +28,19 @@
             android:id="@+id/tvTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
             android:ellipsize="end"
             android:maxLines="3"
             android:text="TITLE"
-            android:textSize="@dimen/_12sdp" />
+            android:textColor="#000"
+            android:textSize="@dimen/_12sdp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tvDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
             android:ellipsize="end"
             android:maxLines="5"
             android:text="DESC"
@@ -45,6 +50,7 @@
             android:id="@+id/tvPublishedAt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
             android:text="DATE"
             android:textSize="@dimen/_12sdp" />
     </LinearLayout>

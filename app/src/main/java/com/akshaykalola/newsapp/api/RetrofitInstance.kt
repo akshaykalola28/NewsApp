@@ -6,21 +6,19 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class RetrofitInstance {
+object RetrofitInstance {
 
-    companion object {
-        private val retrofit by lazy {
-            val logging = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
-            val okHttpClient = OkHttpClient.Builder()
-                .addInterceptor(logging)
-                .build()
+    private val retrofit by lazy {
+        val logging = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
+        val okHttpClient = OkHttpClient.Builder()
+            .addInterceptor(logging)
+            .build()
 
-            Retrofit.Builder()
-                .baseUrl(Constants.BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .client(okHttpClient)
-                .build()
-        }
+        Retrofit.Builder()
+            .baseUrl(Constants.BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .client(okHttpClient)
+            .build()
     }
 
     val newsApi by lazy {
