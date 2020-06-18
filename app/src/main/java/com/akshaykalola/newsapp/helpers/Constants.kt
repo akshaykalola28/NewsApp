@@ -1,4 +1,4 @@
-package com.akshaykalola.newsapp.ui.helpers
+package com.akshaykalola.newsapp.helpers
 
 object Constants {
 

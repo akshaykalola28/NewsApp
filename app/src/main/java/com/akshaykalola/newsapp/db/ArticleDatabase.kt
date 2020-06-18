@@ -1,11 +1,11 @@
-package com.akshaykalola.newsapp.ui.db
+package com.akshaykalola.newsapp.db
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import com.akshaykalola.newsapp.ui.models.Article
+import com.akshaykalola.newsapp.models.Article
 
 @Database(
     entities = [Article::class],
@@ -26,6 +26,10 @@ abstract class ArticleDatabase : RoomDatabase() {
         }
 
         private fun createDatabase(context: Context) =
-            Room.databaseBuilder(context, ArticleDatabase::class.java, "article_db.db").build()
+            Room.databaseBuilder(
+                context.applicationContext,
+                ArticleDatabase::class.java,
+                "article_db.db"
+            ).build()
     }
 }

@@ -1,8 +1,8 @@
-package com.akshaykalola.newsapp.ui.db
+package com.akshaykalola.newsapp.db
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.akshaykalola.newsapp.ui.models.Article
+import com.akshaykalola.newsapp.models.Article
 
 @Dao
 interface ArticleDao {

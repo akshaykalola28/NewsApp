@@ -1,6 +1,6 @@
-package com.akshaykalola.newsapp.ui.api
+package com.akshaykalola.newsapp.api
 
-import com.akshaykalola.newsapp.ui.helpers.Constants
+import com.akshaykalola.newsapp.helpers.Constants
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit

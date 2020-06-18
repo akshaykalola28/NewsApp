@@ -1,7 +1,7 @@
-package com.akshaykalola.newsapp.ui.api
+package com.akshaykalola.newsapp.api
 
-import com.akshaykalola.newsapp.ui.helpers.Constants
-import com.akshaykalola.newsapp.ui.models.NewsResponse
+import com.akshaykalola.newsapp.helpers.Constants
+import com.akshaykalola.newsapp.models.NewsResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query

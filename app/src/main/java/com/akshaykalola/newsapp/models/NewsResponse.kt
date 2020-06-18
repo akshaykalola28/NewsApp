@@ -1,4 +1,4 @@
-package com.akshaykalola.newsapp.ui.models
+package com.akshaykalola.newsapp.models
 
 data class NewsResponse(
     val articles: List<Article>,
