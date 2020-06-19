@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.akshaykalola.newsapp.R
 import com.akshaykalola.newsapp.adapters.ArticleAdapter
@@ -60,6 +61,16 @@ class TopHeadlineFragment : Fragment(R.layout.fragment_top_headline) {
             setHasFixedSize(true)
             layoutManager = LinearLayoutManager(requireContext())
             adapter = articleAdapter
+        }
+
+        articleAdapter.setOnItemClickListener {
+            val bundle = Bundle().apply {
+                putSerializable("article", it)
+            }
+            findNavController().navigate(
+                R.id.action_breakingNewsFragment_to_articleFragment,
+                bundle
+            )
         }
     }
 }

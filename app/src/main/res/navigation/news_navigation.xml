@@ -38,6 +38,10 @@
     <fragment
         android:id="@+id/articleFragment"
         android:name="com.akshaykalola.newsapp.ui.fragments.ArticleFragment"
-        android:label="ArticleFragment"
-        tools:layout="@layout/fragment_article" />
+        android:label="Read Article"
+        tools:layout="@layout/fragment_article">
+        <argument
+            android:name="article"
+            app:argType="com.akshaykalola.newsapp.models.Article" />
+    </fragment>
 </navigation>
