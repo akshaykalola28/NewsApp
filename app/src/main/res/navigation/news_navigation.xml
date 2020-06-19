@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/breakingNewsFragment"
-        android:name="com.akshaykalola.newsapp.ui.fragments.BreakingNewsFragment"
+        android:name="com.akshaykalola.newsapp.ui.fragments.TopHeadlineFragment"
         android:label="@string/breaking_news"
-        tools:layout="@layout/fragment_breaking_news">
+        tools:layout="@layout/fragment_top_headline">
         <action
             android:id="@+id/action_breakingNewsFragment_to_articleFragment"
             app:destination="@id/articleFragment" />

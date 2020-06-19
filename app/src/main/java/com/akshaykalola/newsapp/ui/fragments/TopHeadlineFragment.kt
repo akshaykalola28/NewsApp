@@ -11,12 +11,12 @@ import com.akshaykalola.newsapp.adapters.ArticleAdapter
 import com.akshaykalola.newsapp.helpers.Resource
 import com.akshaykalola.newsapp.ui.NewsViewModel
 import com.akshaykalola.newsapp.ui.activities.MainActivity
-import kotlinx.android.synthetic.main.fragment_breaking_news.*
+import kotlinx.android.synthetic.main.fragment_top_headline.*
 
-class BreakingNewsFragment : Fragment(R.layout.fragment_breaking_news) {
+class TopHeadlineFragment : Fragment(R.layout.fragment_top_headline) {
 
     companion object {
-        private const val TAG = "BreakingNewsFragment"
+        private const val TAG = "TopHeadlineFragment"
     }
 
     lateinit var viewModel: NewsViewModel
