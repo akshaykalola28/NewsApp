@@ -7,4 +7,7 @@ class NewsRepository(val db: ArticleDatabase) {
 
     suspend fun getTopHeadlines(countryCode: String, pageNumber: Int) =
         RetrofitInstance.newsApi.getTopHeadlines(countryCode, pageNumber)
+
+    suspend fun getSearchNews(query: String, pageNumber: Int) =
+        RetrofitInstance.newsApi.searchNews(query, pageNumber)
 }

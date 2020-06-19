@@ -35,7 +35,9 @@ class ArticleAdapter : RecyclerView.Adapter<ArticleAdapter.ArticleVH>() {
         val article = articles.currentList[position]
         holder.itemView.apply {
             Glide.with(this)
-                .load(article.urlToImage).into(ivArticleImage)
+                .load(article.urlToImage)
+                .error(R.drawable.ic_launcher_background)
+                .into(ivArticleImage)
             tvTitle.text = article.title
             tvSource.text = article.source.name
             tvDescription.text = article.description
