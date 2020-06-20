@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.akshaykalola.newsapp.R
 import com.akshaykalola.newsapp.adapters.ArticleAdapter
 import com.akshaykalola.newsapp.helpers.Resource
@@ -55,12 +56,22 @@ class TopHeadlineFragment : Fragment(R.layout.fragment_top_headline) {
         paginationProgressBar?.visibility = View.GONE
     }
 
+    val scrollListener = object : RecyclerView.OnScrollListener() {
+        override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
+            super.onScrollStateChanged(recyclerView, newState)
+            if (!recyclerView.canScrollVertically(1)) {
+                viewModel.getTopHeadline("in")
+            }
+        }
+    }
+
     private fun setupRecyclerView() {
         articleAdapter = ArticleAdapter()
         rvBreakingNews.apply {
             setHasFixedSize(true)
             layoutManager = LinearLayoutManager(requireContext())
             adapter = articleAdapter
+            addOnScrollListener(scrollListener)
         }
 
         articleAdapter.setOnItemClickListener {

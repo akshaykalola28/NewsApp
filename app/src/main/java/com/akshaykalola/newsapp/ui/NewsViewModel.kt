@@ -15,10 +15,11 @@ class NewsViewModel(
 ) : ViewModel() {
 
     val topHeadlines: MutableLiveData<Resource<NewsResponse>> = MutableLiveData()
-    val topHeadlinePage: Int = 1
+    var topHeadlinePage: Int = 1
+    var topHeadlinesResponse: NewsResponse? = null
 
     val searchNews: MutableLiveData<Resource<NewsResponse>> = MutableLiveData()
-    val searchNewsPage: Int = 1
+    var searchNewsPage: Int = 1
 
     init {
         getTopHeadline("in")
@@ -38,8 +39,14 @@ class NewsViewModel(
 
     private fun handelTopHeadlines(response: Response<NewsResponse>): Resource<NewsResponse> {
         if (response.isSuccessful) {
-            response.body()?.let {
-                return Resource.Success(it)
+            response.body()?.let { res ->
+                topHeadlinePage++
+                if (topHeadlinesResponse == null) {
+                    topHeadlinesResponse = res
+                } else {
+                    topHeadlinesResponse?.articles?.addAll(res.articles)
+                }
+                return Resource.Success(topHeadlinesResponse ?: res)
             }
         }
         return Resource.Error(response.message())
